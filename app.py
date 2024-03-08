@@ -483,6 +483,11 @@ def load_audio(audiopath, sampling_rate=22000):
 
 # classifier
 def classify_audio_clip(clip):
+    """
+    Returns whether or not Tortoises' classifier thinks the given clip came from Tortoise.
+    :param clip: torch tensor containing audio waveform data (get it from load_audio)
+    :return: True if the clip was classified as coming from Tortoise and false if it was classified as real.
+    """
     classifier = AudioMiniEncoderWithClassifierHead(2, spec_dim=1, embedding_dim=512, depth=5, downsample_factor=4,
                                                     resnet_blocks=2, attn_blocks=4, num_attn_heads=4, base_channels=32,
                                                     dropout=0, kernel_size=5, distribute_zero_label=False)
