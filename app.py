@@ -467,7 +467,7 @@ def load_audio(audiopath, sampling_rate=22000):
     if isinstance(audiopath, str):
         if audiopath.endswith('.mp3'):
             audio, lsr = librosa.load(audiopath, sr=sampling_rate)
-            audio = torch.floatTensor(audio)
+            audio = torch.tensor(audio, dtype=torch.float32)
         else:
             assert False, f"Unsupported audio format provided:{audiopath[-4:]}"
     elif isinstance(audiopath, io.BytesIO):
