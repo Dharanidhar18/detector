@@ -500,12 +500,10 @@ def main():
 
     st.title("Audio Forgery Alert:Uncovering Artificial audio with DeepFake Detection")
     # file uploader
-    uploaded_file = st.file_uploader(
-        "Insert the audio file ", type=['mp3', 'mp4'])
+    uploaded_file = st.file_uploader("Insert the audio file ", type=['mp3', 'mp4'])
     if uploaded_file is not None:
         if st.button("Check the Audio"):
             col1, col2 = st.columns(2)
-
             with col1:
                 # st.info("your results are below")
                 # load andclassify the audio file
@@ -513,8 +511,7 @@ def main():
                 result = classify_audio_clip(audio_clip)
                 result = result.item()
                 st.info(f"Result Probability: {result * 100}")
-                st.success(
-                    f"The uploaded audio is {result * 100:.2f}% likely to be AI Generated.")
+                st.success(f"The uploaded audio is {result * 100:.2f}% likely to be AI Generated.")
             with col2:
                 st.info("Your Uploaded audio is below")
                 st.audio(uploaded_file)
