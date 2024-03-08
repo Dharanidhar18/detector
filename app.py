@@ -554,10 +554,11 @@ def classify_audio_clip(clip):
 # print(f'The Given audio is {classification_result * 100:.2f}% likely to be AI Generated.')
 
 
-st.set_page_config(layout="wide")
+
 
 
 def main():
+    st.set_page_config(layout="wide")
 
     st.title("Audio Forgery Alert:Uncovering Artificial audio with DeepFake Detection")
     # file uploader
