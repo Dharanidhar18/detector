@@ -1,3 +1,4 @@
+gunicorn==19.7.1
 tqdm
 rotary_embedding_torch
 transformers==4.31.0
